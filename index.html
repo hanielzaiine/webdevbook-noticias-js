@@ -5,31 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gerenciador de notícias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Gerenciador de notícias</h1>
-    <h2>Notícias recentes</h2>
-    <p>Clique no título da notícia para expandir</p>
-    <div id="noticias-recentes">
-        <ul id="noticias-recentes-list"></ul>
+    <div class="jumbotron">
+        <h1 style="text-align:center" class="display-4">Gerenciador de notícias</h1>
     </div>
-
-    <h2>Cadastrar notícia</h2>
-    <form onsubmit="salvar(this); return false;">
+    <div class="container">
         <div>
-            <label for="frm-titulo">Título</label>
-            <input type="text" id="frm-titulo" name="titulo" required>
+            <h3>Notícias recentes</h3>
+            <p>Clique no título da notícia para expandir</p>
+            <div id="noticias-recentes">
+                <ul id="noticias-recentes-list"></ul>
+            </div>
         </div>
-        <div>
-            <label for="frm-conteudo">Conteúdo</label>
-            <textarea id="frm-conteudo" name="conteudo" cols="80" rows="5" required></textarea>
-        </div>
-        <div>
-            <button type="submit">Salvar</button>
-            <button type="reset" formnovalidate>Limpar</button>
-        </div>
-    </form>
+        <hr>
+    </div>
+    <div class="container">
+        <h3>Cadastrar Notícia</h3>
+        <form onsubmit="salvar(this); return false;">
+            <div class="form-group">
+                <label for="frm-titulo">Título</label>
+                <input type="text" class="form-control" id="frm-titulo" name="titulo" placeholder="Título da notícia" required>
+            </div>
+            <div class="form-group"> 
+                    <label for="frm-autor">Autor</label>
+                    <input type="text" class="form-control" id="frm-autor" name="autor" placeholder="Autor" required>
+                </div>
+            <div class="form-group">
+                <label for="frm-conteudo">Conteúdo</label>
+                <textarea class="form-control" id="frm-conteudo" name="conteudo" cols="80" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="frm-data">Data</label>
+                <input class="form-control" type="date" id="frm-data" required>
+            </div>
+            <button class="btn btn-success" type="submit">Salvar</button>
+            <button class="btn btn-danger" type="reset" formnovalidate>Limpar</button>
+        </form>
+    </div>
 </body>
 </html>
